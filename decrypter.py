@@ -1,11 +1,8 @@
 import matplotlib.pyplot as plt
-import statistics
 import numpy as np
 import string
 import re
-import collections
 import json
-
 
 class Decrypter:
   def __init__(self):
@@ -90,13 +87,6 @@ class Decrypter:
     first_cluster = matches[0:max_key_size]
     local_max = sorted(first_cluster, reverse=True)[0]
     key_size = first_cluster.index(local_max) + 1
-
-    # plt.figure()
-    # plt.plot(matches)
-    # plt.title('Frequency of matches between substrings of the cipher text')
-    # plt.ylabel('Number of matches')
-    # plt.xlabel('Number of shifts')
-    # plt.savefig("key_length_{}.png".format(cipher[0:5]))
 
     return key_size
     

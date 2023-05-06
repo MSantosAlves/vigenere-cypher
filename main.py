@@ -1,33 +1,3 @@
-from vigenere import Vigenere
-from decrypter import Decrypter
+from menu import Menu
 
-import numpy as np
-
-criptogram1 = "rvgllakieg tye tirtucatzoe.  whvnvvei i winu mpsecf xronieg giid abfuk thv mfuty; wyenvvvr ik ij a drmg, drzzqly eomemsei in dy jouc; wyenvvvr i wied mpsvlf znmollnkarzlp palszng seworv cfffzn narvhfusvs, rnd srzngznx up khv rerr ff emeiy flnvrac i deek; aed ejpvcirlcy wyeeevvr dy hppfs gvt jucy ae upgei haed ff mv, tyat zt ieqliies r skroeg dorrl grieczplv tf prvvvnt de wrod dvliseiatvlp stvpginx ieto khv stievt, aed detyouicrlcy keotkieg geoglv's hrtj ofw--tyen, z atcolnk it yixh tzmv to xek to jer as jofn aj i tan.  khzs ij mp susskitltv foi pzstfl rnd sacl.  wzty a pyicosfpyicrl wlolrzsh tako tyrfws yidsecf lpoe hzs snoid; i huzetcy kakv tf thv syip.  khvre zs eotyieg slrgrijieg ie tyis.  zf khep blt keen it, rldosk acl mvn zn tyezr dvgiee, jode tzmv or ftyer, thvrijh merp nvarcy khe jade fvecinxs kowrrus tye fcern nity mv."
-criptogram2 = "tpsja kexis ttgztpb wq ssmil tfdxf vsetw ytafrttw btzf pcbroxdzo zn tqac wix, bwfd s, je ahvup sd pcbqqxff lfzed d avu ytwoxavneh sg p aznst qaghv. sfiseic f udh zgaurr dxnm rcdentv btzf nllgubsetz, wymh qfndbhqgotopl qq asmactq m prftlk huusieymi ythfdz: t tdxavict i cjs vu yts edi grzivupavnex yy pikoc wirjbko, xtw gb rvffgxa pikoc, iedp elex t gmbdr fzb sgiff bpkga; p gvgfghm t ele z xwogwko qbgmgwr adlmy bozs rtpmchv e xtme ccmo. xhmetg, hup meyqsd czgxaj o jul fsdis, eaz t tah bf iymvaxhf, mll ra roso: objqgsecl kepxqrl pgxdt sjtp emhgc v o axrfphvunh. huic zseh, ijewiet tw pjoj hzkee so kacwi pt ida dxbfp-tvict ha bsj dp tkahhf dp 1869, ge yxbya mxpm rvrclke pt qrtfffu. iwehl nre hsjspgxm t elaeks mccj, rtcse t diodiiddg, vrl lsxiszrz, isehiza nxvop rv tcxdqchfs nhrfdg v ffb eodagayaepd of cpfmftfzo ahv acnv axbkah. cezp tquvcj! vpkhmss v qfx rmd vfugx gmghrs yxq mciecthw. mrfvsnx ugt qyogbe — btbvictzm jar csnzucvr mtnhm, ifzsex i odbjtlgxq, iof czgwfpbke p mea ifzsex, ugt zvvzn yy sohupeie uwvid we gahzml asdp o znexvopzrr plxm tbxeyasep wuett ra swjcfkwa fiv pchjqgwl a mxmdp rv mtglm rcma: — “ghw, cjs f czglqrsjtpl, qqjg jeyasdtg, mod isptwj dtsid rcdirh ugt o eaenvqoo gacxgq tgkac vlagoedz t tqgrr ickibpfrvpe hq ja uod feuh pvlzl gmgottpkie fiv tpf lacfrdz t lgboeiothq. tgke lk wabpiiz, xwfpg xoetw pd qvu, ljyqaoj nfoizh sjcfkee fiv czuvqb c rzfe gabc lm nkibt tlnpkia, iiuo tlwa t o uoc vvgp s da bni xws iot t rmiiiekt ee bozs tgxuboj eymvmcvrs; enha xgjo p nq ejpcixx pajjfr lh rahgf iwnwfgs wiytha.” qcd e qbix pazgz! gea, cof mp tvdtdvnoh hmh jznex ebdzzcpl ugt zye oxmjtw. v fzb eehwd qfx gttulet t gxpijuwt hah avud wmmh; tfi llwub ele xx izrodiyaiu eoia z nrpxgtogxvqs qfuymvk ss yaxeif, hsd ad"# âgwupg eex tw pjjzdll ha bcto akmzrwge, xtw bpijaoh i fgcgerh gabc hupf wq gskict xmgrv dz xwbthrcfes. fpfue p tfagfvctws. hxfrmxx md jars yhzq di uek iiehcrs, pgxdt scad mvqh gvnshvmh, aznst mdbo jambrm, rojaot gab c toekmy, p tzlst, — yy awiiz ws hpzv, — e... exrtpa ganbizrwr! dljyu p dfunh pttg uicxm cjsd ect e ftftetke etbyoct. gachvnexq-et rv sluid fiv edle mcceixt, eucrr qfx rmd drrpgxm, eouenxy ypwj dz jyq pg gacxrfpg. v vpkhmss, gaoxgqj arid. gea swxo bni et qrrabwet, bro obka fiv sp wiumojsp ksxpf gewh gtpc, toyoyxho. eex h qqj csieh idp qfidt exiodeymi pgodaebgm... ja jowmiugof qfx ijewia lhw etgjeyme q firtch ezdg, eaz iedtqv qfx vqjbr ex lm fdrfs zl ixtavnehw pt ida ekestrza. p wepd ele dbq, a fiv mpgse rcevtglm p sjsl tracwda pke meoieyme-xd. rv pp, t gmqstetke pp qrml, vsy dg flshw qhhlptwse, p pfcl xrfgsrbpkxm, p hiidmi etbyoct qma dfdtt gdtf ea xbrtp sottggmd."
-
-criptogram3 = "Zzkzh Kkfzqbgyeimf l o guzugprf ufucucv gr mujrzwfzc hmvuzkcua Erii Tvbvuka, qyixleinteewv xwilzfrlq wecd Jqnoolhkbg Iofnj mo qaehzzq ke 1981 trdw wt cluki tvmrqtm. Rvr jhi coh crwvoqyir gv uguoi glzciicluifl nf pvzehdf, d fjth tvyv uguoj gv 200 xcniedj m gztryr i xlnud gwt hpvqra wt mvv. Gwuaeilfzolnkh, r wdya krivqb-sv sfxwsai svtq wusozkq xuv ifq tledertcko trdw wt rfprvel iegvxgudvqkm g yecdekcko mdiqcz vvcva. Tvbvuka gzcihmmw kurv jmsbeefziu, Przvy Zgiec h Zzkzh Irjm. Tvbvuka dhsvrl-ag lm jxr xgysfqrogt iiorvflsr srzc jrzdi coh hvufqph dvvkm rhij fyiohdr Dumnpa Uhv Kwunrqv. Vc oijwfzkh, Dvh jm vyaevwmtl prur wu Lskduwu Bnzgfa, qudv vvc vpo urvvvl cfqjmibe wdqmt jod tlm gsa jh tiul cfp jmw lmguvockoi, r iqev cilrlqy dv frdcsoj ddmtpcrqf Bthvzv Xzcut. Vpswth a gdibg pnzfzin ke jhl zgsatlfvcteewf agqa ddikcka gri lkzclvjwgz fihhcgutvv v ucs-eewvvfpdfv, ew hpnro ui jpskriqc Arryza g Kev vv zgjoefztkhm. Uh rkqydf ffu c jrzwzkc Taib Vtnln Jqfliyajv, r bthnjifzohcrr uw ehsro fxqztf srzc bm tdjin hmfufaq l ud gfa obikrj mnlmvqkwu lskhimqaigduwu ko clmzq. Lmsrii qz pirkiivnzvkiu hdvuzaulm r plqvvs vvkmtloklgwu jodxea cvs irdipjej gr lgjaud um 1980, c oeirzvc ke Irsmtas v d dikz iegvxgudvqkm g tac-kluqyaud uw sbe r prqqyir gra jlrfleiu ka vsfkc. H pfsltcyiudum flskh cqxyo rmllqb a reiqt jadlepq waid hcg vukufa cbtfuva fl rfprvels vagmtpmvqkiuzed kvzqps v kvzqpnrv two tazri xcyiudum gjoerdqeh e vpfkkvnro.".lower()
-criptogram4 = "Altd hlbe tg lrncmwxpo kpxs evl ztrsuicp qptspf Ivplyprr th pw clhoic pozc"
-message = "Mathematics is the study of representing and reasoning about abstract objects (such as numbers, points, spaces, sets, structures, and games). Mathematics is used throughout the world as an essential tool in many fields, including natural science, engineering, medicine, and the social sciences. Applied mathematics, the branch of mathematics concerned with application of mathematical knowledge to other fields, inspires and makes use of new mathematical discoveries and sometimes leads to the development of entirely new mathematical disciplines, such as statistics and game theory. Mathematicians also engage in pure mathematics, or mathematics for its own sake, without having any application in mind. There is no clear line separating pure and applied mathematics, and practical applications for what began as pure mathematics are often discovered."
-password = "cripto"
-
-vigenere = Vigenere()
-decrypter = Decrypter()
-
-criptograms = [
-  # { "m": vigenere.cipher_message(message, password), "l": "en-US"},
-  # { "m": criptogram1, "l": "en-US"},
-  # { "m": criptogram2, "l": "pt-BR"},
-  # { "m": criptogram3, "l": "pt-BR"},
-  { "m": criptogram4, "l": "pt-BR"}
-]
-
-for i in range(0, len(criptograms)):
-  key = decrypter.get_key(criptograms[i]["m"], criptograms[i]["l"])
-  message = vigenere.decipher_message(criptograms[i]["m"], key)
-
-  print("---------------------------------------------------------------------------------------------------------")
-  print("Key size: ", len(key))
-  print("Key     : ", key)
-  print("Message : \n", message)
-  print("---------------------------------------------------------------------------------------------------------")
+Menu()
