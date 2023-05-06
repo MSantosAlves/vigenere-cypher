@@ -36,35 +36,14 @@ class Vigenere:
       row = self.__ascii_to_table_index(key[key_iterator])
       if cipher[i].isalpha():
         if cipher[i].lower() in accents:
-            col = self.__table[row].index(self.__handle_especial_chars(cipher[i]))
+            message += cipher[i].lower()
         else:
             col = self.__table[row].index(cipher[i].upper())
-        message += self.__alphabet[col] if cipher[i].isupper() else self.__alphabet[col].lower()
-        key_iterator += 1
+            key_iterator += 1
+            message += self.__alphabet[col] if cipher[i].isupper() else self.__alphabet[col].lower()
       else:
         message += cipher[i]
     return message
 
   def __ascii_to_table_index(self, letter):
     return ord(letter.upper()) - ord('A')
-
-  def __handle_especial_chars(self, esp_char):
-    map_accents = {
-      'á': 'a',
-      'à': 'a',
-      'ã': 'a',
-      'â': 'a',
-      'é': 'e',
-      'ê': 'e',
-      'í': 'i',
-      'ó': 'o',
-      'ô': 'o',
-      'õ': 'o',
-      'ú': 'u',
-      'ü': 'u',
-      'ç': 'c'
-    }
-
-    return map_accents[esp_char.lower()].upper()
-
-  

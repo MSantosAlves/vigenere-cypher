@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import numpy as np
 import string
 import re
@@ -10,14 +9,11 @@ class Decrypter:
     self.__alphabet = string.ascii_uppercase
 
   def get_key(self, cipher, language):
-    sanitized_cipher = re.sub(r'\W+', '', cipher).upper()
-    cipher_len = len(cipher)
-
+    sanitized_cipher = re.sub(r'[^a-zA-Z]', '', cipher).upper()
     key_size = self.__get_key_size(sanitized_cipher)
     closets = self.__create_closets_matrix(sanitized_cipher, key_size)
     idx_of_frequencies = self._generate_idx_of_frequencies(closets)
     alphabet_idx_of_frequencies = [float(s) / 100 for s in list(self.__letter_frequencies[language].values()) ]
-
     key = self.__frequency_analysis(idx_of_frequencies, alphabet_idx_of_frequencies)
     key = self.__find_repeated_substring(key)
 
@@ -74,7 +70,6 @@ class Decrypter:
     # Estimate key length based on index of coincidence method.
     cipher_len = len(cipher)
     max_key_size = min(cipher_len, 20)
-    key_size_matchings = [0] * max_key_size
     left = ""
     right = ""
     matches = []
