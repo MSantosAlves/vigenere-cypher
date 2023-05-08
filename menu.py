@@ -14,7 +14,7 @@ def Menu():
     print("2 - Decifrar mensagem")
     print("3 - Ataque de frequência na cifra de Vigenere para mensagem em português")
     print("4 - Ataque de frequência na cifra de Vigenere para mensagem em inglês")
-    print("5 - Sair")
+    print("5 - Sair\n")
 
     option = input("Opção selecionada: ")
     if option == "1":
@@ -31,10 +31,10 @@ def Menu():
       message = input("Digite a mensagem cifrada: ")
       result = decrypter.get_key(message, "pt-BR")
       print("Chave encontrada para mensagem: ", result)
-    elif option == 4:
+    elif option == '4':
       message = input("Digite a mensagem cifrada: ")
       result = decrypter.get_key(message, "en-US")
       print("Chave encontrada para mensagem: ", result)
 
     elif option != "5":
-      print("Opção inválida.")
+      print("Opção inválida.\n")

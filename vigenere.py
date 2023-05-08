@@ -19,9 +19,13 @@ class Vigenere:
     for i in range(len(message)):
       row = self.__ascii_to_table_index(key[key_iterator])
       col = self.__ascii_to_table_index(message[i])
+      accents = ['á', 'à', 'ã', 'â', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú', 'ü', 'ç']
       if message[i].isalpha():
-        cipher += self.__table[row][col] if message[i].isupper() else self.__table[row][col].lower()
-        key_iterator += 1
+        if message[i].lower() in accents:
+            cipher += message[i].lower()
+        else:
+          cipher += self.__table[row][col] if message[i].isupper() else self.__table[row][col].lower()
+          key_iterator += 1
       else:
         cipher += message[i]
     return cipher
